@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 	<?php
+		//พร่องตาย
 		require("mysql/config.php");
 		$Incident_No = (isset($_GET['Incident_No'])) ? $_GET['Incident_No'] : '';
 		$sql = "SELECT * FROM incident_of_report WHERE Incident_No = '$Incident_No'";

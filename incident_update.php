@@ -1,5 +1,6 @@
 	<?php require("mysql/config.php");
 		//รับค่า input
+		//เบือหว่ะ เบื่อไอหลุยs
 		$Incident_No = $_POST['Incident_No'];
 		$Start_Date=$_POST['Start_Date'];
 		$Last_Update=$_POST['Last_Update'];
@@ -23,6 +24,9 @@
 	?>
 
 	
+		
+		
+		
 		
 	<html>
 		<head>
