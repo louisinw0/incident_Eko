@@ -58,10 +58,7 @@
 								<option value="Pending">Pending</option>
 								<option value="Complete">Complete</option>
 							</select><br/><br />
-							<button type="submit">Submit</button>&nbsp&nbsp&nbsp&nbsp&nbsp
-							<button type="button" onclick="javascript:window.history.back();">Back</button>
-							
-							
+							<button type="submit">Submit</button>
 				</form>
 
 		</body>

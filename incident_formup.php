@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 	<?php
-		//พร่องตาย
 		require("mysql/config.php");
 		$Incident_No = (isset($_GET['Incident_No'])) ? $_GET['Incident_No'] : '';
 		$sql = "SELECT * FROM incident_of_report WHERE Incident_No = '$Incident_No'";
@@ -29,7 +28,7 @@
 	<h1>incident Eko Edit</h1>
 	
 		<form action="incident_update.php" method="POST">
-		
+		<input type="hidden" name="Incident_No" value="<?php echo $Incident_No; ?>" />
 			Start_Date : 
 				<input type="text" value="<?php echo $Start_Date; ?>" /><br />
 			Priority : 
@@ -40,16 +39,16 @@
 			Problem :
 				<br />
 				<textarea name="textarea" cols="55" rows="5" readonly><?php echo $Problem; ?></textarea><br />
-			<?php $Last_Update = date("Y-m-d H:i:s");?>
+			<?php $Last_Update = date("Y-m-d H:i:s");
+			?>
 			Last_Update : 
 				<input type="datetime" name="Last_Update" value="<?php echo $Last_Update; ?>"><br />
 			solving_problems :
 				<br />
 				<textarea name="solving_problems" cols="55" rows="5" wrap="hard" ><?php echo $solving_problems; ?></textarea>
 				<br />
-			<?php $Complete_Date = date("Y-m-d H:i:s");?>
 			Complete_Date : 
-				<input type="datetime" name="Complete_Date" value="<?php echo $Complete_Date; ?>">
+				<input type="datetime-local" name="Complete_Date" value="<?php echo $Complete_Date; ?>">
 				<br />
 			Status :
 				<select name="Status" id="Status">
@@ -57,7 +56,19 @@
 				<option value="Complete">Complete</option>
 				</select>
 				<br />
-				
+				<?php
+					$date1 = strtotime("$Start_Date"); 
+					$date2 = strtotime("$Last_Update"); 
+					$diff = abs($date2 - $date1);
+					$years = floor($diff / (365*60*60*24)); 
+					$months = floor(($diff - $years * 365*60*60*24) / (30*60*60*24));
+					$days = floor(($diff - $years * 365*60*60*24 - $months*30*60*60*24)/ (60*60*24)); 
+					$hours = floor(($diff - $years * 365*60*60*24 - $months*30*60*60*24 - $days*60*60*24) / (60*60)); 
+					$minutes = floor(($diff-$years*365*60*60*24-$months*30*60*60*24-$days*60*60*24-$hours*60*60)/60); 
+					$Time_total=("$days days,$hours hours,$minutes minutes");
+				?>
+			Time_total : 
+				<input type="text" name="Time_total" value="<?php echo $Time_total; ?>" /><br />
 				<br />
 					<button type="submit">Submit</button>
 					<button type="button" onclick="javascript:window.history.back();">Back</button>

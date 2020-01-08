@@ -21,10 +21,10 @@
 					//print_r($result);
 				?>
 					<form action="incident_list.php" method="get" target="_self" id="SearchForm">
-					ค้นหา:<input name="Keyword" type="text" id="Keyword" value="<?php echo($keyword)?>">&nbsp&nbsp
-						<input type="submit" name="button" id="button" value="ค้นหา">&nbsp&nbsp
-						<input type="button" value="All" onclick="test()">&nbsp&nbsp
-						<input type="button" value="AddNew" onclick="test1()">
+					ค้นหา:<input name="Keyword" type="text" id="Keyword" value="<?php echo($keyword)?>">&nbsp;
+							<input type="submit" name="button" id="button" value="ค้นหา">&nbsp;
+							<a href="incident_list.php">All</a>&nbsp
+							<a href="incident_form.php">AddNew</a><br>
 					</form>
 					<table width="0" border="0" cellspacing="0" cellpadding="5">
 						<!--หัวตาราง--->
@@ -40,7 +40,7 @@
 							<td align="center" valign="top" bgcolor="#CCCCCC">solving_problems</td>
 							<td align="center" valign="top" bgcolor="#CCCCCC">Complete_Date</td>
 							<td align="center" valign="top" bgcolor="#CCCCCC">Status</td>
-							<td align="center" valign="top" bgcolor="#CCCCCC">Time_total</td>
+							<td align="center" valign="top" bgcolor="#CCCCCC">Time_total(Day)</td>
 						 </tr>
 					  
 						<?php
@@ -62,7 +62,6 @@
 							<td height="37" align="left" valign="top"> 
 								<a href="incident_formup.php?Incident_No=<?php echo $Incident_No; ?>">Edit</a>
 								<a href="incident_detail.php?Incident_No=<?php echo $Incident_No; ?>">viwe</a>
-
 							</td>
 								<td align="left" valign="top"><?php echo $Incident_No; ?></td>
 								<td align="left" valign="top"><?php echo $Start_Date; ?></td>
@@ -73,9 +72,9 @@
 								<td align="left" valign="top"><?php echo $Last_Update; ?></td>
 								<td align="left" valign="top"><?php echo $solving_problems; ?></td>
 								<td align="left" valign="top"><?php echo $Complete_Date; ?></td>
-								<td align="left" valign="top"><?php echo $Status; ?></td>																			
+								<td align="left" valign="top"><?php echo $Status; ?></td>
 								<td align="left" valign="top"><?php $date1 = strtotime("$Start_Date"); 
-																	$date2 = strtotime("$Complete_Date"); 
+																	$date2 = strtotime("$Last_Update"); 
 																	$diff = abs($date2 - $date1); 
 																	$years = floor($diff / (365*60*60*24)); 
 																	$months = floor(($diff - $years * 365*60*60*24) / (30*60*60*24));
@@ -91,6 +90,5 @@
 				<?php 
 					require("mysql/unconn.php");
 				?>
-				
 			</body>
 	</html>
