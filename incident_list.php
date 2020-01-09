@@ -23,8 +23,10 @@
 					<form action="incident_list.php" method="get" target="_self" id="SearchForm">
 					ค้นหา:<input name="Keyword" type="text" id="Keyword" value="<?php echo($keyword)?>">&nbsp;
 							<input type="submit" name="button" id="button" value="ค้นหา">&nbsp;
-							<a href="incident_list.php">All</a>&nbsp
-							<a href="incident_form.php">AddNew</a><br>
+							<input type="button" onclick="window.location.href='incident_list.php'" value="All">
+							&nbsp;
+							<input type="button" onclick="window.location.href='incident_form.php'" value="AddNew">
+							<br>
 					</form>
 					<table width="0" border="0" cellspacing="0" cellpadding="5">
 						<!--หัวตาราง--->
@@ -56,12 +58,13 @@
 								$solving_problems=$record['solving_problems'];
 								$Complete_Date=$record['Complete_Date'];
 								$Status=$record['Status'];
+								$Time_total=$record['Time_total'];
 						?>
 						<!--เนื้อหา--->
 						<tr>
 							<td height="37" align="left" valign="top"> 
-								<a href="incident_formup.php?Incident_No=<?php echo $Incident_No; ?>">Edit</a>
-								<a href="incident_detail.php?Incident_No=<?php echo $Incident_No; ?>">viwe</a>
+							<input type="button" onclick="window.location.href='incident_formup.php?Incident_No=<?php echo $Incident_No; ?>'" value="Update">
+							<input type="button" onclick="window.location.href='incident_formtime.php?Incident_No=<?php echo $Incident_No; ?>'" value="คำนวณเวลา">
 							</td>
 								<td align="left" valign="top"><?php echo $Incident_No; ?></td>
 								<td align="left" valign="top"><?php echo $Start_Date; ?></td>
@@ -73,15 +76,7 @@
 								<td align="left" valign="top"><?php echo $solving_problems; ?></td>
 								<td align="left" valign="top"><?php echo $Complete_Date; ?></td>
 								<td align="left" valign="top"><?php echo $Status; ?></td>
-								<td align="left" valign="top"><?php $date1 = strtotime("$Start_Date"); 
-																	$date2 = strtotime("$Last_Update"); 
-																	$diff = abs($date2 - $date1); 
-																	$years = floor($diff / (365*60*60*24)); 
-																	$months = floor(($diff - $years * 365*60*60*24) / (30*60*60*24));
-																	$days = floor(($diff - $years * 365*60*60*24 - $months*30*60*60*24)/ (60*60*24)); 
-																	$hours = floor(($diff - $years * 365*60*60*24 - $months*30*60*60*24 - $days*60*60*24) / (60*60)); 
-																	$minutes = floor(($diff-$years*365*60*60*24-$months*30*60*60*24-$days*60*60*24-$hours*60*60)/60); 
-																		printf("%d days,%d hours,%d minutes",$days,$hours,$minutes);?></td>
+								<td align="left" valign="top"><?php echo $Time_total; ?></td>
 						</tr>
 						<?php 
 																		}

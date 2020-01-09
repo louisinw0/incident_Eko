@@ -5,9 +5,9 @@
 			<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 			<title>incident_of_eko_application_report</title>
 		</head>
-
+<center>
 		<body>
-			<h1>Incident of Eko Form</h1>
+			<h1>Form Incident of Eko New</h1>
 				
 				<?php
 				//รันปี+เลขรหัสอัตโนมัติ
@@ -28,6 +28,7 @@
 							<input type="text" name="Incident_No" value="<?php echo$Incident_No?>"/><br />
 							<?php $Start_Date = date("Y-m-d H:i:s");
 							?>
+							&nbsp&nbsp
 						Start_Date:
 							<input type="datetime" name="Start_Date" value="<?php echo$Start_Date?>"/><br />
 						Priority:<br />
@@ -38,15 +39,20 @@
 						Reporter:<br />
 							<input type="radio" name="Reporter" value="Egg" checked="checked" /> Egg<br />
 							<input type="radio" name="Reporter" value="Eko" /> Eko<br />
+							&nbsp&nbsp
 							<input type="radio" name="Reporter" value="ศิริราช" />ศิริราช<br />
 						Team_Support:<br />
 							<input type="radio" name="Team_Support" value="Egg" checked="checked" /> Egg<br />
 							<input type="radio" name="Team_Support" value="Eko" /> Eko<br />
+							&nbsp&nbsp
 							<input type="radio" name="Team_Support" value="ศิริราช" />ศิริราช<br />
+							&nbsp&nbsp
 							<input type="radio" name="Team_Support" value="gosoft" />gosoft<br />
+							&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 						Problem:
 							<textarea name="Problem" rows="5" cols="55" wrap="hard"></textarea>
 							<br /><br />
+							&nbsp&nbsp&nbsp
 						Last_Update:
 							<input type="datetime-local" name="Last_Update" /> <br />
 						solving_problems:
@@ -59,6 +65,8 @@
 								<option value="Complete">Complete</option>
 							</select><br/><br />
 							<button type="submit">Submit</button>
+							&nbsp&nbsp&nbsp
+							<button type="button" onclick="javascript:window.history.back();">Back</button>
 				</form>
 
 		</body>

@@ -20,33 +20,39 @@
 	?>
 	<html>
 	<head>
-
+	
 	<meta charset="UTF-8">
 	<title>incident_of_eko_application_report</title>
 	</head>
+	<center>
 	<body>    
-	<h1>incident Eko Edit</h1>
-	
+	<h1>Form Incident of Eko Update</h1>
 		<form action="incident_update.php" method="POST">
-		<input type="hidden" name="Incident_No" value="<?php echo $Incident_No; ?>" />
+				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+			Incident_No:
+				<input type="text" name="Incident_No" value="<?php echo $Incident_No; ?>" /><br />
+				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 			Start_Date : 
 				<input type="text" value="<?php echo $Start_Date; ?>" /><br />
+				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 			Priority : 
 				<input type="text" value="<?php echo $Priority; ?>" /><br />
+				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 			Reporter : 
 				<input type="text" value="<?php echo $Reporter; ?>" /><br />
+				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 			Team_Support : <input type="text" value="<?php echo $Team_Support; ?>" /><br />
+				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 			Problem :
-				<br />
 				<textarea name="textarea" cols="55" rows="5" readonly><?php echo $Problem; ?></textarea><br />
-			<?php $Last_Update = date("Y-m-d H:i:s");
-			?>
+				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 			Last_Update : 
 				<input type="datetime" name="Last_Update" value="<?php echo $Last_Update; ?>"><br />
+				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 			solving_problems :
-				<br />
 				<textarea name="solving_problems" cols="55" rows="5" wrap="hard" ><?php echo $solving_problems; ?></textarea>
 				<br />
+				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 			Complete_Date : 
 				<input type="datetime-local" name="Complete_Date" value="<?php echo $Complete_Date; ?>">
 				<br />
@@ -56,21 +62,10 @@
 				<option value="Complete">Complete</option>
 				</select>
 				<br />
-				<?php
-					$date1 = strtotime("$Start_Date"); 
-					$date2 = strtotime("$Last_Update"); 
-					$diff = abs($date2 - $date1);
-					$years = floor($diff / (365*60*60*24)); 
-					$months = floor(($diff - $years * 365*60*60*24) / (30*60*60*24));
-					$days = floor(($diff - $years * 365*60*60*24 - $months*30*60*60*24)/ (60*60*24)); 
-					$hours = floor(($diff - $years * 365*60*60*24 - $months*30*60*60*24 - $days*60*60*24) / (60*60)); 
-					$minutes = floor(($diff-$years*365*60*60*24-$months*30*60*60*24-$days*60*60*24-$hours*60*60)/60); 
-					$Time_total=("$days days,$hours hours,$minutes minutes");
-				?>
-			Time_total : 
-				<input type="text" name="Time_total" value="<?php echo $Time_total; ?>" /><br />
 				<br />
+						&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 					<button type="submit">Submit</button>
+						&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 					<button type="button" onclick="javascript:window.history.back();">Back</button>
 		</form>
 		<script>
