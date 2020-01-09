@@ -53,8 +53,10 @@
 							<textarea name="Problem" rows="5" cols="55" wrap="hard"></textarea>
 							<br /><br />
 							&nbsp&nbsp&nbsp
+							<?php $Last_Update = date("Y-m-d H:i:s");
+							?>
 						Last_Update:
-							<input type="datetime-local" name="Last_Update" /> <br />
+							<input type="datetime" name="Last_Update" value="<?php echo$Start_Date?>" /> <br />
 						solving_problems:
 							<textarea name="solving_problems" rows="5" cols="55" wrap="hard"></textarea><br />
 						Complete_Date:

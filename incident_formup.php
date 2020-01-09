@@ -33,18 +33,19 @@
 				<input type="text" name="Incident_No" value="<?php echo $Incident_No; ?>" /><br />
 				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 			Start_Date : 
-				<input type="text" value="<?php echo $Start_Date; ?>" /><br />
+				<input type="text" name="Start_Date" value="<?php echo $Start_Date; ?>" /><br />
 				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 			Priority : 
-				<input type="text" value="<?php echo $Priority; ?>" /><br />
+				<input type="text" name="Priority" value="<?php echo $Priority; ?>" /><br />
 				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 			Reporter : 
-				<input type="text" value="<?php echo $Reporter; ?>" /><br />
+				<input type="text" name="Reporter" value="<?php echo $Reporter; ?>" /><br />
 				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-			Team_Support : <input type="text" value="<?php echo $Team_Support; ?>" /><br />
+			Team_Support :
+			<input type="text" name="Team_Support" value="<?php echo $Team_Support; ?>" /><br />
 				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 			Problem :
-				<textarea name="textarea" cols="55" rows="5" readonly><?php echo $Problem; ?></textarea><br />
+				<textarea name="Problem" cols="55" rows="5"><?php echo $Problem; ?></textarea><br />
 				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 			Last_Update : 
 				<input type="datetime" name="Last_Update" value="<?php echo $Last_Update; ?>"><br />
