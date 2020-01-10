@@ -36,7 +36,7 @@
 		var v1 =<?php echo $v1; ?>;
 			if(v1=1){
 				alert('การบันทึกเสร็จสิ้น');
-				window.location.replace("incident_detail.php?Incident_No=<?php echo($Incident_No);?>");
+				window.location.replace('incident_list.php');
 			}else{
 				alert('การบันทึกล้มเหลว');
 				window.history.back();

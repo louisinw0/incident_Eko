@@ -26,11 +26,9 @@
 				<form action="incident_insert.php" method="POST">
 						Incident_No:
 							<input type="text" name="Incident_No" value="<?php echo$Incident_No?>"/><br />
-							<?php $Start_Date = date("Y-m-d H:i:s");
-							?>
 							&nbsp&nbsp
 						Start_Date:
-							<input type="datetime" name="Start_Date" value="<?php echo$Start_Date?>"/><br />
+							<input type="datetime-local" name="Start_Date" value="<?php echo$Start_Date?>"/><br />
 						Priority:<br />
 							<input type="radio" name="Priority" value="P1" checked="checked" /> P1<br />
 							<input type="radio" name="Priority" value="P2" /> P2<br />
@@ -56,7 +54,7 @@
 							<?php $Last_Update = date("Y-m-d H:i:s");
 							?>
 						Last_Update:
-							<input type="datetime" name="Last_Update" value="<?php echo$Start_Date?>" /> <br />
+							<input type="datetime" name="Last_Update" value="<?php echo$Last_Update?>" /> <br />
 						solving_problems:
 							<textarea name="solving_problems" rows="5" cols="55" wrap="hard"></textarea><br />
 						Complete_Date:

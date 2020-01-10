@@ -17,8 +17,6 @@
 		require("mysql/unconn.php");
 	?>
 
-	
-		
 	<html>
 		<head>
 			<meta charset="UTF-8">

@@ -59,7 +59,7 @@
 				<br />
 			Status :
 				<select name="Status" id="Status">
-				<option value="Pending">Pending</option>
+				<option value="<font face="verdana" color="red">Pending</font>">Pending</option>
 				<option value="Complete">Complete</option>
 				</select>
 				<br />
