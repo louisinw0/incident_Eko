@@ -8,7 +8,7 @@
 	<body>
 
 	<?php
-		//รับค่า input
+		//รับค่า input SQLเข้าดาต้าเบส
 		$Incident_No = $_POST['Incident_No'];
 		$Start_Date=$_POST['Start_Date'];
 		$Priority=$_POST['Priority'];

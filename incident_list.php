@@ -2,7 +2,7 @@
 	<html>
 		<head>
 			<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-			<title>incident_of_eko_application_report</title>
+			<title>incident of eko application report</title>
 		</head>
 			<body>
 				<?php
@@ -28,25 +28,24 @@
 							<input type="button" onclick="window.location.href='incident_form.php'" value="AddNew">
 							<br>
 					</form>
-					<table width="0" border="0" cellspacing="0" cellpadding="5">
+					<table width="0" border="1" cellspacing="5" cellpadding="5">
 						<!--หัวตาราง--->
 						<tr>
-							<td align="center" valign="top" bgcolor="#CCCCCC">manage</td>
-							<td align="center" valign="top" bgcolor="#CCCCCC">Incident_No</td>
+							<td align="center" valign="top" bgcolor="#CCCCCC">Manage</td>
+							<td align="center" valign="top" bgcolor="#CCCCCC">Incident No</td>
 							<td align="center" valign="top" bgcolor="#CCCCCC">Start_Date</td>
 							<td align="center" valign="top" bgcolor="#CCCCCC">Priority</td>
 							<td align="center" valign="top" bgcolor="#CCCCCC">Reporter</td>
-							<td align="center" valign="top" bgcolor="#CCCCCC">Team_Support</td>
+							<td align="center" valign="top" bgcolor="#CCCCCC">Team Support</td>
 							<td align="center" valign="top" bgcolor="#CCCCCC">Problem</td>
 							<td align="center" valign="top" bgcolor="#CCCCCC">Last_Update</td>
-							<td align="center" valign="top" bgcolor="#CCCCCC">solving_problems</td>
-							<td align="center" valign="top" bgcolor="#CCCCCC">Complete_Date</td>
+							<td align="center" valign="top" bgcolor="#CCCCCC">Solving Problems</td>
+							<td align="center" valign="top" bgcolor="#CCCCCC">Complete Date</td>
 							<td align="center" valign="top" bgcolor="#CCCCCC">Status</td>
-							<td align="center" valign="top" bgcolor="#CCCCCC">Time_total(Day)</td>
+							<td align="center" valign="top" bgcolor="#CCCCCC">Time Total</td>
 						 </tr>
-					  
+				
 						<?php
-							
 							while($record=mysqli_fetch_array($result)){
 								$Incident_No=$record['Incident_No'];
 								$Start_Date=$record['Start_Date'];
@@ -59,7 +58,7 @@
 								$Complete_Date=$record['Complete_Date'];
 								$Status=$record['Status'];
 								$Time_total=$record['Time_total'];
-						?>
+								?>
 						<!--เนื้อหา--->
 						<tr>
 							<td height="37" align="left" valign="top"> 
@@ -75,12 +74,25 @@
 								<td align="left" valign="top"><?php echo $Last_Update; ?></td>
 								<td align="left" valign="top"><?php echo $solving_problems; ?></td>
 								<td align="left" valign="top"><?php echo $Complete_Date; ?></td>
-								<td align="left" valign="top"><?php echo $Status; ?></td>
+								
+								<?php
+								if ($record["Status"] == "Pending"){
+								?>
+									<td bgcolor="red"><?= $record["Status"]; ?></td>
+								<?php
+									}
+									if ($record["Status"] == "Complete"){
+								?>
+									<td bgcolor="Lightgreen"><?= $record["Status"]; ?></td>
+								<?php
+									}
+								?>
 								<td align="left" valign="top"><?php echo $Time_total; ?></td>
 						</tr>
 						<?php 
 																		}
 						?>
+						
 					</table>
 				<?php 
 					require("mysql/unconn.php");
