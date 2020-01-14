@@ -3,6 +3,15 @@
 		<head>
 			<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 			<title>incident of eko application report</title>
+			<style>
+				table {
+				  border-collapse: collapse;
+				}
+
+				table, td, th {
+				  border: 1px solid black;
+				}
+			</style>
 		</head>
 			<body>
 				<?php
@@ -28,7 +37,7 @@
 							<input type="button" onclick="window.location.href='incident_form.php'" value="AddNew">
 							<br>
 					</form>
-					<table width="0" border="1" cellspacing="5" cellpadding="5">
+					<table width="0" border="0" cellspacing="1" cellpadding="5">
 						<!--หัวตาราง--->
 						<tr>
 							<td align="center" valign="top" bgcolor="#CCCCCC">Manage</td>
@@ -74,19 +83,19 @@
 								<td align="left" valign="top"><?php echo $Last_Update; ?></td>
 								<td align="left" valign="top"><?php echo $solving_problems; ?></td>
 								<td align="left" valign="top"><?php echo $Complete_Date; ?></td>
-								
-								<?php
-								if ($record["Status"] == "Pending"){
-								?>
-									<td bgcolor="red"><?= $record["Status"]; ?></td>
-								<?php
-									}
-									if ($record["Status"] == "Complete"){
-								?>
-									<td bgcolor="Lightgreen"><?= $record["Status"]; ?></td>
-								<?php
-									}
-								?>
+										<?php
+										//output ค่าของStatus
+										if ($record["Status"] == "Pending"){
+										?>
+											<td bgcolor="red"><?= $record["Status"]; ?></td>
+										<?php
+											}
+											if ($record["Status"] == "Complete"){
+										?>
+											<td bgcolor="Lightgreen"><?= $record["Status"]; ?></td>
+										<?php
+											}
+										?>
 								<td align="left" valign="top"><?php echo $Time_total; ?></td>
 						</tr>
 						<?php 
