@@ -16,7 +16,6 @@
 		$v1=($result==1)?1:0;
 		require("mysql/unconn.php");
 	?>
-
 	<html>
 		<head>
 			<meta charset="UTF-8">

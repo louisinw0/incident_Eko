@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+			<!-----ดึงข้อมูลมาจากหน้า list----->
 	<?php
 		require("mysql/config.php");
 		$Incident_No = (isset($_GET['Incident_No'])) ? $_GET['Incident_No'] : '';
@@ -20,13 +21,13 @@
 	?>
 	<html>
 	<head>
-	
 	<meta charset="UTF-8">
 	<title>incident of eko Update</title>
 	</head>
 	<center>
 	<body>    
 	<h1>Form Incident of Eko Update</h1>
+				<!-----แบบฟอมการupdate----->
 		<form action="incident_update.php" method="POST">
 				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 			Incident_No:
@@ -70,7 +71,6 @@
 					<button type="button" onclick="javascript:window.history.back();">Back</button>
 		</form>
 		<script>
-
 		</script>
 	</body>
 	</html>

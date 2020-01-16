@@ -3,6 +3,7 @@
 		<head>
 			<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 			<title>incident of eko application report</title>
+			<!----รูปแบบตาราง--->
 			<style>
 				table {
 				  border-collapse: collapse;
@@ -15,20 +16,20 @@
 		</head>
 			<body>
 				<?php
-				//ช่องค้นหา
+				//ช่องค้นหาหาเลข Incident_No คำที่ใกล้เคียง
 					$sql="SELECT * FROM incident_of_report";
 					if(isset($_GET['Keyword'])){
 						$keyword=$_GET['Keyword'];
 						$sql.=" WHERE Incident_No LIKE '%".$keyword."%'";
-						//print($_GET['Keyword']);
-						//print($sql);
+						
 					}else{
 						$keyword="";
 					}
 					require("mysql/connect.php");
 					$result=mysqli_query($conn,$sql);
-					//print_r($result);
+					
 				?>
+				<!-----สร้างตาราง----->
 					<form action="incident_list.php" method="get" target="_self" id="SearchForm">
 					ค้นหา:<input name="Keyword" type="text" id="Keyword" value="<?php echo($keyword)?>">&nbsp;
 							<input type="submit" name="button" id="button" value="ค้นหา">&nbsp;
@@ -38,22 +39,22 @@
 							<br>
 					</form>
 					<table width="0" border="0" cellspacing="1" cellpadding="5">
-						<!--หัวตาราง--->
+						<!---หัวตาราง---->
 						<tr>
-							<td align="center" valign="top" bgcolor="#CCCCCC">Manage</td>
-							<td align="center" valign="top" bgcolor="#CCCCCC">Incident No</td>
-							<td align="center" valign="top" bgcolor="#CCCCCC">Start_Date</td>
-							<td align="center" valign="top" bgcolor="#CCCCCC">Priority</td>
-							<td align="center" valign="top" bgcolor="#CCCCCC">Reporter</td>
-							<td align="center" valign="top" bgcolor="#CCCCCC">Team Support</td>
-							<td align="center" valign="top" bgcolor="#CCCCCC">Problem</td>
-							<td align="center" valign="top" bgcolor="#CCCCCC">Last_Update</td>
-							<td align="center" valign="top" bgcolor="#CCCCCC">Solving Problems</td>
-							<td align="center" valign="top" bgcolor="#CCCCCC">Complete Date</td>
-							<td align="center" valign="top" bgcolor="#CCCCCC">Status</td>
-							<td align="center" valign="top" bgcolor="#CCCCCC">Time Total</td>
+							<td align="center" valign="top" bgcolor="#CCCCCC"><b>Manage</b></td>
+							<td align="center" valign="top" bgcolor="#CCCCCC"><b>Incident No</b></td>
+							<td align="center" valign="top" bgcolor="#CCCCCC"><b>Start_Date</b></td>
+							<td align="center" valign="top" bgcolor="#CCCCCC"><b>Priority</b></td>
+							<td align="center" valign="top" bgcolor="#CCCCCC"><b>Reporter</b></td>
+							<td align="center" valign="top" bgcolor="#CCCCCC"><b>Team Support</b></td>
+							<td align="center" valign="top" bgcolor="#CCCCCC"><b>Problem</b></td>
+							<td align="center" valign="top" bgcolor="#CCCCCC"><b>Last_Update</b></td>
+							<td align="center" valign="top" bgcolor="#CCCCCC"><b>Solving Problems</b></td>
+							<td align="center" valign="top" bgcolor="#CCCCCC"><b>Complete_Date</b></td>
+							<td align="center" valign="top" bgcolor="#CCCCCC"><b>Status</b></td>
+							<td align="center" valign="top" bgcolor="#CCCCCC"><b>Time Total</b></td>
 						 </tr>
-				
+							<!----loopข้อมูลในตาราง---->
 						<?php
 							while($record=mysqli_fetch_array($result)){
 								$Incident_No=$record['Incident_No'];
@@ -67,10 +68,10 @@
 								$Complete_Date=$record['Complete_Date'];
 								$Status=$record['Status'];
 								$Time_total=$record['Time_total'];
-								?>
-						<!--เนื้อหา--->
+						?>
+						<!-----เนื้อหาดึงข้อมูลมาจากดาต้าเบส----->
 						<tr>
-							<td height="37" align="left" valign="top"> 
+							<td  align="left" valign="top"> 
 							<input type="button" onclick="window.location.href='incident_formup.php?Incident_No=<?php echo $Incident_No; ?>'" value="Update">
 							<input type="button" onclick="window.location.href='incident_formtime.php?Incident_No=<?php echo $Incident_No; ?>'" value="คำนวณเวลา">
 							</td>
@@ -79,12 +80,13 @@
 								<td align="left" valign="top"><?php echo $Priority; ?></td>
 								<td align="left" valign="top"><?php echo $Reporter; ?></td>
 								<td align="left" valign="top"><?php echo $Team_Support; ?></td>
-								<td align="left" valign="top"><?php echo $Problem; ?></td>
-								<td align="left" valign="top"><?php echo $Last_Update; ?></td>
-								<td align="left" valign="top"><?php echo $solving_problems; ?></td>
+								<td align="left" width="23%" valign="top"><?php echo $Problem; ?></td>
+								<td align="left" width="4.8%" valign="top"><?php echo $Last_Update; ?></td>
+								<td align="left" width="20%" valign="top"><?php echo $solving_problems; ?></td>
 								<td align="left" valign="top"><?php echo $Complete_Date; ?></td>
+								
+										<!-----outputค่าของStatus ถ้าpendingช่องตารางเป็นสีแดง   ถ้าcompleteช่องตารางสีเขียว----->
 										<?php
-										//output ค่าของStatus
 										if ($record["Status"] == "Pending"){
 										?>
 											<td bgcolor="red"><?= $record["Status"]; ?></td>
@@ -96,12 +98,11 @@
 										<?php
 											}
 										?>
-								<td align="left" valign="top"><?php echo $Time_total; ?></td>
+								<td align="left" width="7.9%" valign="top"><?php echo $Time_total; ?></td>
 						</tr>
 						<?php 
 																		}
-						?>
-						
+						?>		
 					</table>
 				<?php 
 					require("mysql/unconn.php");

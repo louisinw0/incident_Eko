@@ -4,9 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>incident_of_eko_application_report</title>
 	</head>
-
 	<body>
-
 	<?php
 		//รับค่า input SQLเข้าดาต้าเบส
 		$Incident_No = $_POST['Incident_No'];

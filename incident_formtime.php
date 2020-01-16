@@ -1,4 +1,5 @@
 	<!DOCTYPE html>
+		<!-----ดึงข้อมูลมาจากหน้า list----->
 		<?php
 			require("mysql/config.php");
 			$Incident_No = (isset($_GET['Incident_No'])) ? $_GET['Incident_No'] : '';
@@ -19,15 +20,18 @@
 	<center>
 	<body>
 		<h1>Form Incident of Eko SumTime</h1>
+			<!-----แบบฟอร์มการคำนวณเวลา----->
 			<form action="incident_updatetime.php" method="POST">
-						&nbsp&nbsp&nbsp&nbsp&nbsp Incident_No:
+						&nbsp&nbsp&nbsp&nbsp&nbsp 
+				Incident_No:
 					<input type="text" name="Incident_No" value="<?php echo $Incident_No; ?>" /><br />
-						&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Start_Date:
+						&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 
+				Start_Date:
 					<input type="text" name="Start_Date" value="<?php echo $Start_Date; ?>" /><br />
 				Complete_Date : 
 					<input type="text" name="Complete_Date" value="<?php echo $Complete_Date; ?>"><br />
+						<!-----สูตรคำนวณเวลารวม------>
 						<?php
-						//สูตรคำนวณเวลารวม
 						$date1 = strtotime("$Start_Date"); 
 						$date2 = strtotime("$Complete_Date"); 
 						$diff = abs($date2 - $date1);
