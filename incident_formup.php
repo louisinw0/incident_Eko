@@ -34,7 +34,7 @@
 				<input type="text" name="Incident_No" value="<?php echo $Incident_No; ?>" /><br />
 					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 			Start_Date : 
-				<input type="text" name="Start_Date" value="<?php echo $Start_Date; ?>" /><br />
+				<input type="datetime" name="Start_Date" value="<?php echo $Start_Date; ?>" /><br />
 					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 			Priority : 
 				<input type="text" name="Priority" value="<?php echo $Priority; ?>" /><br />

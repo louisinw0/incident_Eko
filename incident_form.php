@@ -41,8 +41,7 @@
 							<input type="radio" name="Reporter" value="ศิริราช" />ศิริราช<br />
 						Team_Support:<br />
 							<input type="radio" name="Team_Support" value="Egg" checked="checked" /> Egg<br />
-							<input type="radio" name="Team _Support" value="Eko" /> Eko<br />
-							&nbsp&nbsp
+							<input type="radio" name="Team_Support" value="Eko" /> Eko<br />&nbsp&nbsp
 							<input type="radio" name="Team_Support" value="ศิริราช" />ศิริราช<br />&nbsp&nbsp
 							<input type="radio" name="Team_Support" value="gosoft" />gosoft<br />
 							&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
